@@ -12,7 +12,7 @@ export default function Home({query, setQuery}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className="container mx-auto px-4 pt-8 bg-yellow">
         <SearchBar query={query} setQuery={setQuery} />
         <MoviesTableView query={query} />
       </main>

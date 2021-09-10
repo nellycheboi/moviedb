@@ -1,4 +1,5 @@
 import { useCallback } from "react";
+
 /**
  * A search bar that only mutates the query value, passed from the parent, when the user presses enter
  */
@@ -11,12 +12,17 @@ export default function SearchBar({ query, setQuery }) {
   }, []);
   return (
     <>
-      <input
-        defaultValue={query}
-        onKeyDown={handleKeyDown}
-        placeholder="Search posts"
-        type="text"
-      />
+      <div className="bg-white shadow p-2 flex">
+        <input
+          className="w-full rounded p-2"
+          defaultValue={query}
+          onKeyDown={handleKeyDown}
+          placeholder="Search 'StartUp'"
+          type="text"
+        />
+      </div>
     </>
   );
 }
+
+
