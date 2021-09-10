@@ -1,6 +1,6 @@
 ## Demo
 This is a nextJs webapp to search your next favorite movie 🍿🍿
-Check it our here  [Movie DB Live 🍿](https://moviedb-eta.vercel.app/)
+See Live version here 👉  [Movie DB Live 🍿](https://moviedb-eta.vercel.app/)
 
 
 ## Getting Started
