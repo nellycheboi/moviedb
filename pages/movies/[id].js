@@ -3,6 +3,7 @@ import { useState } from "react";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 import { data } from "autoprefixer";
+import Loading from "../../components/loading";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -15,7 +16,6 @@ const fetcher = async (url) => {
 };
 
 export function useMovie(query) {
-  console.log("Use movies", query);
   const { data, error } = useSWR(
     () => query && `/api/searchById?q=${query}`,
     fetcher
@@ -30,7 +30,8 @@ export default function Movie() {
   const { query } = useRouter();
 
   const { data, isLoading, isError } = useMovie(query?.id);
-  if (isLoading) return <div>Loading</div>;
+  if (isLoading) return <Loading />
+
   return (
     <>
       <div className="container mx-lg mx-auto pt-8 pl-8 flex justify-center">

@@ -13,6 +13,10 @@ export default function Home({query, setQuery}) {
       </Head>
 
       <main className="container mx-auto px-4 pt-8 bg-yellow">
+        <h2 className="text-center pb-4">
+          <span className="text-3xl">🍿</span> Ready for some binging?{" "}
+          <span className="text-3xl">🍿</span>
+        </h2>
         <SearchBar query={query} setQuery={setQuery} />
         <MoviesTableView query={query} />
       </main>

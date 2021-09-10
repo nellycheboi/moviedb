@@ -3,6 +3,7 @@ import Link from "next/link";
 import router from "next/router";
 import { useState } from "react";
 import useSWR from "swr";
+import Loading from "./loading";
 const fetcher = async (url) => {
   const res = await fetch(url);
   const data = await res.json();
@@ -27,7 +28,7 @@ export function useMovies(query) {
 export default function MoviesTableView({ query }) {
 
   const { data, isLoading, isError } = useMovies(query);
-  if (query && isLoading) return <div>Loading</div>;
+  if (query && isLoading) return <Loading/>;
 
   const handleOnClick = (imdbID) => {
     router.push(`/movies/${imdbID}`);

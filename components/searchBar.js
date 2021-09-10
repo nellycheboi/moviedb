@@ -17,7 +17,7 @@ export default function SearchBar({ query, setQuery }) {
           className="w-full rounded p-2"
           defaultValue={query}
           onKeyDown={handleKeyDown}
-          placeholder="Search 'StartUp'"
+          placeholder="Search 'Vacation'"
           type="text"
         />
       </div>
