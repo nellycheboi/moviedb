@@ -47,7 +47,7 @@ export default function Movie() {
           <div className="bg-white shadow p-3 rounded w-96">
           <div>
             <div
-              className="bg-cover bg-center bg-gray-300 h-32 rounded"
+              className="bg-cover bg-center bg-gray-300 h-64 rounded"
               style={{ backgroundImage: `url('${data?.Poster}')` }}
             ></div>
             <div className="mt-6">
