@@ -10,6 +10,7 @@ export default function SearchBar({ query, setQuery }) {
       setQuery(q);
     }
   }, []);
+
   return (
     <>
       <div className="bg-white shadow p-2 flex">

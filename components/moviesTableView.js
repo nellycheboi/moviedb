@@ -1,9 +1,11 @@
 import { data } from "autoprefixer";
 import Link from "next/link";
+import Image from "next/image";
 import router from "next/router";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import useSWR from "swr";
 import Loading from "./loading";
+
 const fetcher = async (url) => {
   const res = await fetch(url);
   const data = await res.json();
@@ -19,12 +21,14 @@ export function useMovies(query) {
     () => query && `/api/searchByName?q=${query}`,
     fetcher
   );
+
   return {
     data: data?.data?.Search,
     isLoading: !error && !data,
     isError: error,
   };
 }
+
 export default function MoviesTableView({ query }) {
 
   const { data, isLoading, isError } = useMovies(query);
@@ -33,6 +37,7 @@ export default function MoviesTableView({ query }) {
   const handleOnClick = (imdbID) => {
     router.push(`/movies/${imdbID}`);
   };
+
   return (
     <>
       {data && data.length > 0 && (
@@ -57,12 +62,13 @@ export default function MoviesTableView({ query }) {
                       <td className="px-4 py-3 border">
                         <div className="flex items-center text-sm">
                           <div className="relative w-8 h-8 mr-3 rounded-full md:block">
-                            <img
+                            <Image
                               className="object-cover w-full h-full rounded-full"
                               src={Poster}
                               height={100}
                               width={80}
                               loading="lazy"
+                              alt={Title}
                             />
                             <div
                               className="absolute inset-0 rounded-full shadow-inner"
