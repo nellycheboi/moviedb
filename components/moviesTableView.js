@@ -51,7 +51,7 @@ export default function MoviesTableView({ query }) {
                   {data.map(({ imdbID, Title, Year, Poster }) => (
                     <tr
                       key={imdbID}
-                      className="text-gray-700"
+                      className="text-gray-700 hover:bg-gray-100 active:bg-gray-200 cursor-pointer"
                       onClick={() => handleOnClick(imdbID)}
                     >
                       <td className="px-4 py-3 border">
@@ -60,8 +60,8 @@ export default function MoviesTableView({ query }) {
                             <img
                               className="object-cover w-full h-full rounded-full"
                               src={Poster}
-                              height={50}
-                              width={40}
+                              height={100}
+                              width={80}
                               loading="lazy"
                             />
                             <div
@@ -71,7 +71,7 @@ export default function MoviesTableView({ query }) {
                           </div>
                         </div>
                       </td>
-                      <td className="px-4 py-3 text-ms font-semibold border">
+                      <td className="px-4 py-3 text-ms  border">
                         {Title}
                       </td>
                       <td className="px-4 py-3 text-ms font-semibold border">

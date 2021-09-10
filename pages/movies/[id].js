@@ -39,7 +39,7 @@ export default function Movie() {
           <div className="mb-6">
             <Link href="/">
               <a>
-                <button className="bg-red-400 hover:bg-red-300 rounded text-white p-2 pl-4 pr-4">
+                <button className="bg-red-400 hover:bg-red-300 rounded text-white p-2 pl-4 pr-4 animate-pulse">
                   Back
                 </button>
               </a>
